@@ -38,10 +38,9 @@ export default class index extends Component {
         })
 
         // const ws = new WebSocket("wss://stream.binance.com:9443/ws/!miniTicker@arr");
-        const ws = new WebSocket("wss://stream.binance.com:9443/ws/!ticker@arr");
+        this.ws = new WebSocket("wss://stream.binance.com:9443/ws/!ticker@arr");
         
-
-        ws.onmessage = (message) => {
+        this.ws.onmessage = (message) => {
             const {prices} = this.state;
             const result = JSON.parse(message.data);
             result.forEach(r=>{
@@ -67,6 +66,12 @@ export default class index extends Component {
         }).then(result=>{
             this.setState({symbols: result.symbols.filter(s=>s.status==='TRADING' && ['USDT','AUD'].includes(s.quoteAsset))})
         })
+    }
+
+    componentWillUnmount(){
+        if(this.ws){
+            this.ws.close();
+        }
     }
 
     // getPrice(symbol){
@@ -167,6 +172,9 @@ export default class index extends Component {
                             </tr>
                         </tbody>
                     </table>
+                </div>
+                <div className='flex-center' style={{marginTop:32}}>
+                    <i onClick={()=>window.location.reload()} className='fa fa-sync' />
                 </div>
             </DashboardContainer>
         )

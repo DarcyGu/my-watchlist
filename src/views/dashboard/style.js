@@ -2,15 +2,17 @@ import styled from 'styled-components/macro';
 
 export const DashboardContainer = styled.div`
 
-    padding: 50px 20px;
+    padding: 50px 15px;
 
     .title {
         font-size: 32px;
         font-weight: 500;
         letter-spacing: 1.62px;
-        margin-bottom: 31px;
-        margin-left: 8px;
+        margin-bottom: 30px;
         text-align: center;
+        img {
+            display: inline-block;
+        }
     }
 
     .table-container {
@@ -45,6 +47,16 @@ export const DashboardContainer = styled.div`
 
         .fa-minus {
             cursor: pointer;
+        }
+    }
+
+    .fa-sync {
+        cursor: pointer;
+        font-size: 18px;
+        color: rgba(230, 235, 255, 0.7);
+        transition: color 0.2s ease;
+        &:hover {
+            color: white;
         }
     }
 
