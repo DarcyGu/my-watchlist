@@ -7,7 +7,7 @@ import Select from 'react-select';
 
 const df = {
     BTCUSDT: {base: 'BTC', quote: 'USDT'}, 
-    API3USDT: {base: 'ETH', quote: 'USDT'}, 
+    ETHUSDT: {base: 'ETH', quote: 'USDT'}, 
 };
 
 export default class index extends Component {
