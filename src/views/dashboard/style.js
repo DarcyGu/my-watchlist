@@ -13,6 +13,10 @@ export const DashboardContainer = styled.div`
         img {
             display: inline-block;
         }
+        .github-link {
+            margin-right: 12px;
+            font-size: 28px;
+        }
     }
 
     .table-container {

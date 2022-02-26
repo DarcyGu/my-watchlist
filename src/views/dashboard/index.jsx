@@ -111,7 +111,12 @@ export default class index extends Component {
         return (
             <DashboardContainer>
                 <div className='title'>
-                    <div style={{marginBottom:8}}>My Watchlist</div>
+                    <div style={{marginBottom:8}}>
+                        <a className='github-link' href='https://github.com/DarcyGu/my-watchlist'>
+                            <i className='fab fa-github' />
+                        </a>
+                        My Watchlist
+                    </div>
                     <img src={logo} style={{width:120}} alt='Binance Logo' />
                 </div>
                 <div className='table-container'>
